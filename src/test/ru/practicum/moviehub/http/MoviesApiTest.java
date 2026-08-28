@@ -64,7 +64,7 @@ public class MoviesApiTest {
         assertEquals("application/json; charset=UTF-8", contentTypeHeaderValue,
                 "Content-Type должен содержать формат данных и кодировку");
 
-        assertEquals("[]",resp.body().trim(), 
+        assertEquals("[]", resp.body().trim(),
                 "При пустом хранилище должен возвращаться пустой JSON-массив");
 
     }
@@ -589,6 +589,7 @@ public class MoviesApiTest {
         assertEquals(201, resp.statusCode(),
                 "Content-Type application/json с кодировкой должен приниматься");
     }
+
     @Test
     void postMovies_withNullJson_returns422() throws Exception {
         String json = "null";
