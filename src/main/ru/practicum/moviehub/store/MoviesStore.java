@@ -4,6 +4,7 @@ import ru.practicum.moviehub.model.Movie;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MoviesStore {
@@ -16,6 +17,12 @@ public class MoviesStore {
         movies.put(nextId, movie);
         nextId++;
         return movie;
+    }
+
+    public List<Movie> getByYear(int year) {
+        return movies.values().stream()
+                .filter(movie -> movie.getYear() == year)
+                .toList();
     }
 
     public Collection<Movie> getAll() {
